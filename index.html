@@ -3,8 +3,54 @@
   <title>
     Akatsuki JS
   </title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Londrina+Solid" rel="stylesheet"> 
   <body>
-    Em breve um site mais bonito. ;)
+    <header>
+      Akatsuki JS
+    </header>
+    <section>
+      <article>
+        <h2>
+          Sobre nós
+        </h2>
+        <p class="main">
+          Somos uma organização, formada por alguns alunos do Curso de Computação da UFPI. Entusiastas por JS, revoltados com o Curso e zueiros.
+          Fazemos alguns projetos apenas por aprendizado e diversão.
+          Usamos somente JavaScript <span>&hearts;</span>.
+        </p>
+        <p class="whonext"> Em breve um possível curso com Stack NMVR (já começamos com a burocracia)! </p>
+        <p class="whonext"> E depois um site decente, ao nosso estilo! </p>
+        <div id="stack">
+          <card name="Node.js" class="node" link="https://nodejs.org"> </card>
+          <card name="MongoDB" class="mongo" link="https://mongodb.com"> </card>
+          <card name="Vue.js" class="vue" link="https://vuejs.org"> </card>
+          <card name="Restify" class="restify" link="https://restify.com"> </card>
+        </div>
+      </article>
+    </section>
+    <footer><p>by Akatasuki JS</p></footer>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script>
+
+    Vue.component('card', {
+      props: ['name', 'link'],
+      template:
+      `<div class="wr">
+        <a :href="this.link" target="_blank">
+          <div class="first">
+            {{ this.name }}
+          </div>
+        </a>
+        <div class="second">
+        </div>
+        </div>`
+    });
+
+    new Vue({el: '#stack'});
+
+  </script>
 </html>
