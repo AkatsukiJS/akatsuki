@@ -13,7 +13,8 @@ header{
     font-size: 3em;
     text-align: center;
     padding: 0.4em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 article{
@@ -33,10 +34,14 @@ footer{
 }
 
 #stack{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 90%;
     margin: 3em auto 0 auto;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .wr{
@@ -44,7 +49,8 @@ footer{
     text-align: center;
     height: 100px;
     line-height: 90px;
-    box-shadow: 0px 4px 3px 3px #ddd;
+    -webkit-box-shadow: 0px 4px 3px 3px #ddd;
+            box-shadow: 0px 4px 3px 3px #ddd;
 }
 
 a{
@@ -53,7 +59,9 @@ a{
 }
 
 .first:hover{
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -75,7 +83,8 @@ span{
 
 @media (max-width: 480px){
     #stack{
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         margin-top: 0;
     }
     .wr{
