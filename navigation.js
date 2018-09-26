@@ -47,6 +47,7 @@ var body = document.body;
 
 function startAnim(elem){
     console.log(elem)
+    console.log('hey')
     var el = document.getElementById(elem);
     var stop = false;
     var begin = window.scrollY;
@@ -77,26 +78,6 @@ function startAnim(elem){
 for(var i = 0; i < navItems.length; i++){
     navItems[i].onclick = function(e){
         startAnim(this.hash.slice(1, this.hash.length));
+        console.log('hey')
     };
 }
-
-var bgdark = false;
-window.addEventListener('scroll', function(){
-        // -=-=-=- Interative MArker section -=-=-=-=-=
-        var len = sectionItems.length;
-        var winScroll = window.scrollY;
-        var canAttrib = false;
-        for(var i = 0; i < len; i++){
-            if(!i) canAttrib = true;
-            var elem = document.getElementById(sectionItems[i].id);
-            var off = elem.offsetTop;
-            var diff = off -100;
-    
-            if( canAttrib && ( Math.trunc(diff > 0?diff:0) <= winScroll ) && 
-                ( winScroll < Math.trunc(diff + elem.offsetHeight + 1))){
-                canAttrib = !canAttrib;
-                //break;
-            }
-        
-        }
-    }, true);
