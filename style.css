@@ -277,7 +277,7 @@ nav a{
 #sec2{
     background-color: black;
     font-size: 2em;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
 }
 
 #sec2 article{
@@ -373,7 +373,7 @@ nav a{
 footer{
     position: relative;
     width: 100%;
-    padding: 2rem 0;
+    padding: 0rem 0 2rem 0;
 }
 
 footer .container{
