@@ -1,4 +1,6 @@
-## Repository for Akatsuki JS site
+## Repository for AKATSUKI JS site
+
+[https://akatsuki.js.org](https://akatsuki.js.org)
 
 ### About Us
 
@@ -12,5 +14,5 @@ And after, a decent site, at our style!
 
 ### Logo
 
-AKATSUKI's logo was created by [Jeova Pereira Gomes](https://github.com/jeovazero/logos-and-assets/tree/master/akatsuki_js)
+AKATSUKI JS's logo was created by [Jeova Pereira Gomes](https://github.com/jeovazero/logos-and-assets)
 The logo is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
