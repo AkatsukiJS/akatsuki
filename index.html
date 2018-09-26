@@ -1,56 +1,108 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-  <title>
-    Akatsuki JS
-  </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Londrina+Solid" rel="stylesheet"> 
-  <body>
-    <header>
-      Akatsuki JS
-    </header>
-    <section>
-      <article>
-        <h2>
-          Sobre nós
-        </h2>
-        <p class="main">
-          Somos uma organização, formada por alguns alunos do Curso de Computação da UFPI. Entusiastas por JS, revoltados com o Curso e zueiros.
-          Fazemos alguns projetos apenas por aprendizado e diversão.
-          Usamos somente JavaScript <span>&hearts;</span>.
-        </p>
-        <p class="whonext"> Em breve um possível curso com Stack NMVR (já começamos com a burocracia)! </p>
-        <p class="whonext"> E depois um site decente, ao nosso estilo! </p>
-        <div id="stack">
+<title>
+  AKATSUKI JS
+</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Londrina+Solid" rel="stylesheet">
+
+<body>
+  <section id="sec1">
+    <div id="wrapper">
+      <div class="nav">
+        <div class="container">
+          <div id="menu">
+              <span class="line-menu"></span>
+              <span class="line-menu"></span>
+              <span class="line-menu"></span>
+          </div>
+          <nav id="menu-list">
+            <ul>
+              <li><a href="https://github.com/AkatsukiJS/" target="_blank"><img class="git" src="assets/GitHub-Mark-Light-64px.png" /></a></li>
+              <li><a href="#about">SOBRE</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="red_line flt">
+        <div class="set_logo_text">
+          <div class="cloud">
+              <img src="assets/logo.svg" />
+            </div>
+          <div class="text">
+            <span>AKATSUKI</span>
+            <span>JS</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="go-about">
+        <a href="#about"><img class="arrow" src="assets/arrow_down.svg" /></a>
+      </div>
+    </div>
+  </section>
+  <section id="sec2" href="#about">
+    <article class="container" id="about">
+      <h2>
+        Sobre nós
+      </h2>
+      <p class="main">
+        Somos uma organização, formada por alguns alunos do Curso de Computação da UFPI. Entusiastas por JS, revoltados com o Curso e zueiros.
+        Fazemos alguns projetos apenas por aprendizado e diversão.
+        Usamos somente JavaScript <span class="heart">&hearts;</span>.
+      </p>
+      <p class="whonext"> Em breve um possível curso com a Stack <span class="nmvr">NMVR</span> (já começamos com a burocracia)! </p>
+      <div id="stack">
           <card name="Node.js" class="node" link="https://nodejs.org"> </card>
           <card name="MongoDB" class="mongo" link="https://mongodb.com"> </card>
           <card name="Vue.js" class="vue" link="https://vuejs.org"> </card>
           <card name="Restify" class="restify" link="https://restify.com"> </card>
         </div>
-      </article>
-    </section>
-    <footer><p>by Akatasuki JS</p></footer>
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  <script>
+      <p class="whonext"> E depois um site decente, ao nosso estilo! </p>
+      
+    </article>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="content">
+        by <span class="akatsuki">AKATSUKI</span> JS <img src="assets/logo.svg" />
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="./navigation.js"></script>
+<script>
+  let menu = document.getElementById('menu');
+  menu.onclick = () => {
+    document.getElementById('menu-list').classList.toggle('show-menu');
+    menu.classList.toggle('to-icon-close');
+  };
 
-    Vue.component('card', {
-      props: ['name', 'link'],
-      template:
-      `<div class="wr">
-        <a :href="this.link" target="_blank">
-          <div class="first">
-            {{ this.name }}
-          </div>
-        </a>
-        <div class="second">
-        </div>
-        </div>`
-    });
+  Vue.component('card', {
+    props: ['name', 'link'],
+    template:
+    `<div class="card">
+      <a :href="link">
+      <div class="square">
+        <span>{{ name }}</span>
+      </div>
+      </a>
+      <div class="single-line"></div>
+    </div>`
+  });
 
-    new Vue({el: '#stack'});
+  new Vue({
+    el: '#stack',
+  })
 
-  </script>
+  window.scroll({
+    top: 2500, 
+    left: 0, 
+    behavior: 'smooth' 
+  });
+</script>
+
 </html>
