@@ -12,9 +12,11 @@ console.log(navItems)
 var mapSectionNav = new Map();
 for(var i = 0; i < navItems.length; i++){
     var href = navItems[i].hash;
-    mapSectionNav.set(href, navItems[i]);
+    if(href){ mapSectionNav.set(href, navItems[i]); } 
 }
 
+
+console.log(mapSectionNav)
 /*
 for(var i = 1; i < sectionItems.length; i++){
     sectionItems[i].classList.add('sumir');
