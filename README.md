@@ -9,3 +9,8 @@ JS Enthusiasts, disgusted with the Course and "zueiros". We do some projects jus
 Comming soon a free course with Stack NMVR (We already started with the bureaucracy to offer the course)!
 
 And after, a decent site, at our style!
+
+### Logo
+
+AKATSUKI's logo was created by [Jeova Pereira Gomes](https://github.com/jeovazero/logos-and-assets/tree/master/akatsuki_js)
+The logo is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
