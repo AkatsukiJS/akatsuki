@@ -155,9 +155,10 @@ nav a{
     height: 100%;
 }
 .cloud{
+    overflow: hidden;
     width: 480px;
-        -webkit-animation: moving 8s infinite linear;
-                animation: moving 8s infinite linear;
+        -webkit-animation: moving 6s infinite linear;
+                animation: moving 6s infinite linear;
 }
 .js{
     color: #ff0037;
@@ -303,6 +304,8 @@ nav a{
     -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     opacity: 1;
+    font-family: "Dosis";
+    font-weight: bolder;
 }
 
 .to-icon-close .line-menu:nth-child(1) {
@@ -356,8 +359,10 @@ nav a{
 
 #sec2{
     background-color: black;
-    font-size: 2em;
+    font-size: 1.8em;
     padding-bottom: 2rem;
+    font-family: "Dosis";
+    font-weight: bolder;
 }
 
 #sec2 article{
@@ -375,6 +380,7 @@ nav a{
     padding: 0.4rem;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    /*! font-family: "Londrina Solid"; */
 }
 #sec2:after{
     content: '';
