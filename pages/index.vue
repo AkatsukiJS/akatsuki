@@ -1,68 +1,106 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        akatsuki-js-blog
-      </h1>
-      <h2 class="subtitle">
-        The blog for akatsuki js
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="wrapper">
+    <div class="root">
+      <nav class="header">
+        <ul class="header__links">
+          <a target="_blank" href="https://github.com/akatsukijs/akatsuki">
+            <img
+              alt="github"
+              class="icon-github"
+              src="~assets/imgs/GitHub-Mark-Light-64px.png"
+            />
+          </a>
+          <a class="anchor" href="/blog">
+            <span class="anchor__text">Blog</span>
+          </a>
+        </ul>
+      </nav>
+      <logo-animated class="logo" />
+      <section class="about-text">
+        <h1 class="about-text__title">
+          Sobre Nós
+        </h1>
+        <p>
+          Somos uma organização formada por alguns entusiastas JS e zueiros. Nós
+          fazemos alguns projetos apenas para aprendizado e diversão. Nós só
+          usamos JavaScript <span class="heart">♥</span>.
+        </p>
+        <p>
+          Em breve, projetos interessantes!
+        </p>
+      </section>
+      <footer-dark />
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import FooterDark from '@/components/FooterDark'
+import LogoAnimated from '@/components/LogoAnimated'
 
 export default {
   components: {
-    Logo
+    FooterDark,
+    LogoAnimated
   }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+<style lang="sass" scoped>
+.wrapper
+  background-color: pallete("primary")
+  min-height: 100vh
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+.root
+  width: 740px
+  margin: auto
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+.header
+  padding: 1rem
+  display: flex
+  justify-content: flex-end
+  &__links
+    display: inline-flex
+    align-items: center
+    & a
+      padding: 0 1rem
 
-.links {
-  padding-top: 15px;
-}
+.logo
+  margin: 6rem 0
+
+.anchor
+  text-decoration: none
+  &__text
+    color: white
+    font-size: 1.5rem
+    @include typho-nav
+    &:hover
+      color: pallete("secondary")
+
+.icon-github
+  width: 32px
+
+.about-text
+  color: pallete("reverse")
+  margin: 6rem 0
+  &__title
+    @include typho-title-1
+    padding: 1rem 1.2rem
+    margin: 2rem 0
+    background-color: pallete("secondary")
+    display: inline-block
+    border-radius: 8px
+  & p
+    @include typho-content-1
+    padding: 1rem 0
+
+.heart
+  color: pallete("secondary")
+  animation: heart-color 1s ease infinite
+
+@keyframes heart-color
+  from
+    color: pallete("secondary")
+  to
+    color: pallete("reverse")
 </style>
