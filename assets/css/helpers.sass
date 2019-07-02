@@ -1,0 +1,45 @@
+// COLORS
+
+$colors: ("primary": black, "secondary": #ff0037, "reverse": white)
+
+@function pallete($key)
+  @return map-get($colors, $key)
+
+// FONTS
+
+// font-families
+$fira-sans: 'Fira Sans', sans-serif
+$fira-condesed: 'Fira Sans Extra Condensed', sans-serif
+
+// font map
+$fonts: ("secondary": $fira-sans, "primary": $fira-condesed)
+
+@function typho($key)
+  @return map-get($fonts, $key)
+
+// fonts mixins
+@mixin typho-title-1
+  font-family: typho("primary")
+  font-weight: bold
+  font-size: 2rem
+
+@mixin typho-title-2
+  font-family: typho("secondary")
+  font-weight: bold
+
+@mixin typho-nav
+  font-family: typho("primary")
+  font-weight: bold
+  font-size: 1.5rem
+
+@mixin typho-content-1
+  font-family: typho("primary")
+  font-weight: 600
+  font-size: 1.5rem
+  line-height: 2.25rem
+
+@mixin typho-footer
+  font-family: typho("primary")
+  font-weight: 400
+  font-size: 1.125rem
+  line-height: 1.68rem
