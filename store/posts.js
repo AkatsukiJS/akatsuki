@@ -7,7 +7,10 @@ const getName = (filename) => {
 const items = resolve.keys().reduce(
   (acc, key) => ({
     ...acc,
-    [getName(key)]: resolve(key)
+    [getName(key)]: {
+      ...resolve(key),
+      id: Buffer.from(key).toString('base64')
+    }
   }),
   {}
 )
