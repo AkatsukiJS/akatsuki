@@ -1,3 +1,7 @@
+import fs from 'fs'
+const posts = fs.readdirSync('./posts')
+const postsName = posts.map((name) => name.replace(/(^(.+)\.md$)/g, '$2'))
+
 export default {
   mode: 'universal',
   /*
@@ -50,6 +54,14 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.md$/,
+        loader: './lib/loader.js'
+      })
+    }
+  },
+  generate: {
+    routes: postsName.map((name) => `blog/${name}`)
   }
 }
