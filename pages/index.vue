@@ -10,9 +10,9 @@
               src="~assets/imgs/GitHub-Mark-Light-64px.png"
             />
           </a>
-          <a class="anchor" href="/blog">
+          <nuxt-link class="anchor" to="/blog">
             <span class="anchor__text">Blog</span>
-          </a>
+          </nuxt-link>
         </ul>
       </nav>
       <logo-animated class="logo" />
