@@ -19,6 +19,9 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'arrow-parens': ['error', 'always'],
+    'prettier/prettier': 'error',
+    'no-console': 'off',
     'vue/html-self-closing': ['error', {
       'html': {
          'void': 'always',
