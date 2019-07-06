@@ -43,14 +43,20 @@ export default {
   background-color: pallete("reverse")
   min-height: 100vh
   &__content
-    width: 740px
+    @include width-x
+    @include padding-x
     margin: auto
     padding-bottom: 6rem
+
   &__title
     @include typho-strong-2
     @include font-size-x-large
     padding: 3rem 0
+    @media #{$breakpoint-2}
+      @include font-size-large
+      padding: 2rem 0
   &__cards
+    padding-bottom: 3rem
     & a
       text-decoration: none
       display: block
