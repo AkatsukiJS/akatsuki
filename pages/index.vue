@@ -1,7 +1,7 @@
 <template>
   <div class="home">
+    <header-dark :has-logo="false" :is-blog="false" />
     <div class="home__wrapper">
-      <header-dark :has-logo="false" :is-blog="false" />
       <logo-animated class="home__logo" />
       <section class="about-text">
         <h1 class="about-text__title">
