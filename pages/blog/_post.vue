@@ -14,10 +14,10 @@
           {{ post.date }}
         </span>
       </div>
-      <div class="blog__cover">
+      <div v-if="post.image" class="blog__cover">
         <img alt="cover" :src="post.image" />
       </div>
-      <div class="blog__content">
+      <div class="blog__content markdown-body">
         <contents :compiled="compiled" />
       </div>
     </div>
@@ -28,6 +28,7 @@
 <script>
 import HeaderDark from '@/components/HeaderDark'
 import FooterX from '@/components/FooterX'
+import '@/assets/css/dracula.css'
 const Vue = require('vue-template-compiler')
 
 const contents = {
@@ -45,7 +46,6 @@ export default {
     FooterX
   },
   data() {
-    console.log(this.$store.state)
     return {
       param: this.$route.params,
       post: null,
@@ -65,11 +65,14 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css)
 .blog
   background-color: pallete("primary--reverse")
   min-height: 100vh
   &__post
-    width: 740px
+    @include width-x
+    @include padding-x
     margin: auto
     padding-top: 4rem
     padding-bottom: 6rem
@@ -77,11 +80,16 @@ export default {
     @include typho-strong-2
     @include font-size-xx-large
     padding: 1rem 0
+    @media #{$breakpoint-2}
+      padding: 3rem 0 1rem
+      @include font-size-x-large
   &__subtitle
     @include typho-normal-1
     @include font-size-large
     color: pallete("grey")
     padding: 0.5rem 0 1.5rem
+    @media #{$breakpoint-2}
+      @include font-size-medium
   &__author
     @include typho-normal-1
     @include font-size-small
@@ -98,11 +106,42 @@ export default {
     & article
       @include typho-normal-1
       @include font-size-medium
-    & ::v-deep p
-      padding: 1rem 0
-    & ::v-deep h2, h3, h4, h5, h6
+    & /deep/ em, /deep/ i
+      font-style: italic
+    & /deep/ p
+      margin: 1rem 0
+    & /deep/ a
+      color: pallete("secondary")
+      text-decoration: underline
+    & /deep/ h1, /deep/ h2, /deep/ h3, /deep/ h4, /deep/ h5, /deep/ h6
       font-weight: bolder
-      padding: 0.7rem 0 0.5rem
-    & ::v-deep h2
+      line-height: 1.7
+      padding: 0
+      cursor: text
+      position: relative
+    & /deep/ h1
+      font-size: 3rem
+    & /deep/ h2
+      font-size: 2.5rem
+    & /deep/ h3
+      font-size: 1.75rem
+    & /deep/ h4
       font-size: 1.5rem
+    & /deep/ h5
+      font-size: 1.25rem
+    & /deep/ h6
+      font-size: 1.125rem
+    & /deep/ pre
+      background-color: #282a36
+      display: block
+      overflow-x: auto
+      padding: 1em
+      border-radius: 4px
+      color: #f8f8f2
+    & /deep/ pre, /deep/ code
+      font-family: 'Fira Code', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    & /deep/ ol
+      list-style-type: decimal
+    & /deep/ ul
+      list-style-type: disc
 </style>
