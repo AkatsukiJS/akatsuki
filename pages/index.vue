@@ -1,8 +1,8 @@
 <template>
-  <div class="wrapper">
-    <div class="root">
+  <div class="home">
+    <div class="home__wrapper">
       <header-dark :has-logo="false" :is-blog="false" />
-      <logo-animated class="logo" />
+      <logo-animated class="home__logo" />
       <section class="about-text">
         <h1 class="about-text__title">
           Sobre Nós
@@ -10,7 +10,7 @@
         <p>
           Somos uma organização formada por alguns entusiastas JS e zueiros. Nós
           fazemos alguns projetos apenas para aprendizado e diversão. Nós só
-          usamos JavaScript <span class="heart">♥</span>.
+          usamos JavaScript <span class="about-text__heart">♥</span>.
         </p>
         <p>
           Em breve, projetos interessantes!
@@ -36,56 +36,38 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.wrapper
+.home
   background-color: pallete("primary")
   min-height: 100vh
-
-.root
-  width: 740px
-  margin: auto
-
-.header
-  padding: 1rem
-  display: flex
-  justify-content: flex-end
-  &__links
-    display: inline-flex
-    align-items: center
-    & a
-      padding: 0 1rem
-
-.logo
-  margin: 6rem 0
-
-.anchor
-  text-decoration: none
-  &__text
-    color: white
-    font-size: 1.5rem
-    @include typho-nav
-    &:hover
-      color: pallete("secondary")
-
-.icon-github
-  width: 32px
+  &__wrapper
+    @include width-x
+    @include padding-x
+    margin: auto
+  &__logo
+    margin: 6rem 0
 
 .about-text
   color: pallete("primary--reverse")
   margin: 6rem 0
   &__title
-    @include typho-title-1
-    padding: 1rem 1.2rem
+    @include typho-strong-1
+    @include font-size-x-large
+    padding: 0.5rem 1.2rem
     margin: 2rem 0
     background-color: pallete("secondary")
     display: inline-block
     border-radius: 8px
+    @media #{$breakpoint-2}
+      @include font-size-large
   & p
-    @include typho-content-1
+    @include typho-strong-1
+    @include font-size-large
     padding: 1rem 0
-
-.heart
-  color: pallete("secondary")
-  animation: heart-color 1s ease infinite
+    @media #{$breakpoint-2}
+      @include font-size-medium
+  &__heart
+    color: pallete("secondary")
+    animation: heart-color 1s ease infinite
 
 @keyframes heart-color
   from
