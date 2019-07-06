@@ -51,14 +51,18 @@ export default {
   width: 100%
   &--blog
     border-bottom: 8px solid pallete("secondary")
+  @media #{$breakpoint-2}
+    padding: 0 1rem
 
 .header
-  width: 100%
+  @include width-x
   padding: 1.25rem 0
   display: flex
   justify-content: space-between
   &__logo
     width: 108px
+    @media #{$breakpoint-2}
+      width: 72px
   &__links
     display: inline-flex
     align-items: center
@@ -67,10 +71,12 @@ export default {
   &__link
     @include typho-strong-2
     @include font-size-large
-    padding: 0.625rem 0.8rem
+    padding: 0.325rem 0.8rem
     border-radius: 8px
     text-decoration: none
     color: pallete("primary--reverse")
+    @media #{$breakpoint-2}
+      @include font-size-medium
     &:hover
       color: pallete("secondary")
     &--red
