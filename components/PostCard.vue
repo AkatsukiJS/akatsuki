@@ -49,20 +49,26 @@ export default {
   box-sizing: border-box
   border: #f1f1f1 solid 1px
   box-shadow: 0px 5px 13px 1px rgba(0, 0, 0, 0.08)
+  @media #{$breakpoint-2}
+    padding: 1.5rem 1.25rem
   &__title
     @include typho-strong-2
     @include font-size-large
     color: pallete("primary")
+    @media #{$breakpoint-2}
+      @include font-size-medium
   &__subtitle
     @include typho-normal-1
+    @include font-size-medium
     color: pallete("grey")
-    padding: 1.25rem 0
-    font-size: 1.1rem
+    padding: 0.5rem 0 0.75rem
+    @media #{$breakpoint-2}
+      @include font-size-small
   &__tags
     &__text
-      @include typho-normal-1
+      @include typho-strong-1
       @include font-size-x-small
-      color: pallete("reverse")
+      color: pallete("primary--reverse")
       background-color: pallete("secondary")
       padding: 0.25rem 0.5rem
       display: inline-block
@@ -70,8 +76,9 @@ export default {
     &__text + &__text
       margin-left: 0.5rem
   &__author
-    padding: 0.5rem 0 0
+    padding: 0.75rem 0 0
     @include typho-normal-1
+    @include font-size-small
     color: pallete("grey")
     display: flex
     justify-content: flex-end
