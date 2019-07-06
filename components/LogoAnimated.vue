@@ -22,9 +22,14 @@
   &__cloud
     width: 480px
     animation: 6s cloud-animation infinite linear
+    @media #{$breakpoint-2}
+      width: 300px
   &__name
     margin-top: 2rem
     width: 320px
+    @media #{$breakpoint-2}
+      margin-top: 1rem
+      width: 200px
 
 @keyframes cloud-animation
   0%
