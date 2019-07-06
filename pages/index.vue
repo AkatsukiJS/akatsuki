@@ -1,20 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="root">
-      <nav class="header">
-        <ul class="header__links">
-          <a target="_blank" href="https://github.com/akatsukijs/akatsuki">
-            <img
-              alt="github"
-              class="icon-github"
-              src="~assets/imgs/GitHub-Mark-Light-64px.png"
-            />
-          </a>
-          <nuxt-link class="anchor" to="/blog">
-            <span class="anchor__text">Blog</span>
-          </nuxt-link>
-        </ul>
-      </nav>
+      <header-dark :has-logo="false" :is-blog="false" />
       <logo-animated class="logo" />
       <section class="about-text">
         <h1 class="about-text__title">
@@ -35,11 +22,13 @@
 </template>
 
 <script>
+import HeaderDark from '@/components/HeaderDark'
 import FooterDark from '@/components/FooterDark'
 import LogoAnimated from '@/components/LogoAnimated'
 
 export default {
   components: {
+    HeaderDark,
     FooterDark,
     LogoAnimated
   }
@@ -81,7 +70,7 @@ export default {
   width: 32px
 
 .about-text
-  color: pallete("reverse")
+  color: pallete("primary--reverse")
   margin: 6rem 0
   &__title
     @include typho-title-1
@@ -102,5 +91,5 @@ export default {
   from
     color: pallete("secondary")
   to
-    color: pallete("reverse")
+    color: pallete("primary--reverse")
 </style>

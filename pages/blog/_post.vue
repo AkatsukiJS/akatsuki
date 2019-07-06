@@ -1,12 +1,17 @@
 <template>
   <div class="blog">
-    <header-blog />
+    <header-dark :has-logo="true" :is-blog="true" />
     <div class="blog__post">
-      <h1 class="blog__title">{{ post.title }}</h1>
-      <h4 class="blog__subtitle">{{ post.subtitle }}</h4>
+      <h1 class="blog__title">
+        {{ post.title }}
+      </h1>
+      <h4 class="blog__subtitle">
+        {{ post.subtitle }}
+      </h4>
       <div class="blog__author">
         <span>
-          por <a :href="post.authorlink">{{ post.author }}</a> / {{ post.date }}
+          por <a :href="post.authorlink" target="_blank">{{ post.author }}</a> /
+          {{ post.date }}
         </span>
       </div>
       <div class="blog__cover">
@@ -21,7 +26,7 @@
 </template>
 
 <script>
-import HeaderBlog from '@/components/HeaderBlog'
+import HeaderDark from '@/components/HeaderDark'
 import FooterLight from '@/components/FooterLight'
 const Vue = require('vue-template-compiler')
 
@@ -36,7 +41,7 @@ const contents = {
 export default {
   components: {
     contents,
-    HeaderBlog,
+    HeaderDark,
     FooterLight
   },
   data() {

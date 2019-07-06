@@ -1,8 +1,10 @@
 <template>
   <div class="blog">
-    <header-blog />
+    <header-dark :has-logo="true" :is-blog="true" />
     <div class="blog__content">
-      <h1 class="blog__title">Posts</h1>
+      <h1 class="blog__title">
+        Posts
+      </h1>
       <div class="blog__cards">
         <nuxt-link v-for="(post, key) in posts" :key="key" :to="'/blog/' + key">
           <post-card class="card" :post="post" />
@@ -15,13 +17,13 @@
 
 <script>
 import PostCard from '@/components/PostCard'
-import HeaderBlog from '@/components/HeaderBlog'
+import HeaderDark from '@/components/HeaderDark'
 import FooterLight from '@/components/FooterLight'
 
 export default {
   components: {
     PostCard,
-    HeaderBlog,
+    HeaderDark,
     FooterLight
   },
   data() {
