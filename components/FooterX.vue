@@ -45,7 +45,8 @@ export default {
 
 <style lang="sass" scoped>
 .footer
-  @include typho-footer
+  @include typho-strong-1
+  @include font-size-small
   width: 100%
   padding: 2rem 0
   display: flex
@@ -55,13 +56,17 @@ export default {
   &--dark
     background-color: pallete('primary')
   &__wrapper
-    width: 740px
+    width: $size-desktop
     display: flex
     justify-content: space-between
     align-items: center
+    @media #{$breakpoint-2}
+      flex-direction: column
   &__logo-link
     text-decoration: none
     display: inline-flex
+    @media #{$breakpoint-2}
+      margin-top: 1rem
   &__logo
     height: 1.2rem
   &__logo + &__logo
