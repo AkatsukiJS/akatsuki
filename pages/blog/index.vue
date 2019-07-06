@@ -11,20 +11,20 @@
         </nuxt-link>
       </div>
     </div>
-    <footer-light />
+    <footer-x :is-dark="false" />
   </div>
 </template>
 
 <script>
 import PostCard from '@/components/PostCard'
 import HeaderDark from '@/components/HeaderDark'
-import FooterLight from '@/components/FooterLight'
+import FooterX from '@/components/FooterX'
 
 export default {
   components: {
     PostCard,
     HeaderDark,
-    FooterLight
+    FooterX
   },
   data() {
     return {

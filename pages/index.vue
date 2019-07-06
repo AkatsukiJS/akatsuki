@@ -16,20 +16,20 @@
           Em breve, projetos interessantes!
         </p>
       </section>
-      <footer-dark />
+      <footer-x :is-dark="true" />
     </div>
   </div>
 </template>
 
 <script>
 import HeaderDark from '@/components/HeaderDark'
-import FooterDark from '@/components/FooterDark'
+import FooterX from '@/components/FooterX'
 import LogoAnimated from '@/components/LogoAnimated'
 
 export default {
   components: {
     HeaderDark,
-    FooterDark,
+    FooterX,
     LogoAnimated
   }
 }

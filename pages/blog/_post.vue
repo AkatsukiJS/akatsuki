@@ -21,13 +21,13 @@
         <contents :compiled="compiled" />
       </div>
     </div>
-    <footer-light />
+    <footer-x :is-dark="false" />
   </div>
 </template>
 
 <script>
 import HeaderDark from '@/components/HeaderDark'
-import FooterLight from '@/components/FooterLight'
+import FooterX from '@/components/FooterX'
 const Vue = require('vue-template-compiler')
 
 const contents = {
@@ -42,7 +42,7 @@ export default {
   components: {
     contents,
     HeaderDark,
-    FooterLight
+    FooterX
   },
   data() {
     console.log(this.$store.state)
