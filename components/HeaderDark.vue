@@ -53,7 +53,7 @@ export default {
     border-bottom: 8px solid pallete("secondary")
 
 .header
-  width: 740px
+  width: 100%
   padding: 1.25rem 0
   display: flex
   justify-content: space-between
@@ -65,7 +65,8 @@ export default {
     & > *
       padding: 0 1rem
   &__link
-    @include typho-nav
+    @include typho-strong-2
+    @include font-size-large
     padding: 0.625rem 0.8rem
     border-radius: 8px
     text-decoration: none
