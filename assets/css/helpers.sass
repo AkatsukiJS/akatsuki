@@ -1,6 +1,11 @@
 // COLORS
 
-$colors: ("primary": black, "secondary": #ff0037, "reverse": white)
+// no maps multiline :(
+// https://github.com/sass/sass/issues/216
+$secondary: ("secondary": #ff0037, "secondary--dark": #e10534)
+$primary: ("primary": black, "primary--reverse": white)
+$grey: ("grey": #5a5a5a)
+$colors: map-merge(map-merge($primary, $secondary), $grey)
 
 @function pallete($key)
   @return map-get($colors, $key)
