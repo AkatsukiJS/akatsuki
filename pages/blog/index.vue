@@ -47,7 +47,8 @@ export default {
     margin: auto
     padding-bottom: 6rem
   &__title
-    @include typho-title-post
+    @include typho-strong-2
+    @include font-size-x-large
     padding: 3rem 0
   &__cards
     & a

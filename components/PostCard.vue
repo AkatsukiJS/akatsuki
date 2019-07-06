@@ -1,7 +1,11 @@
 <template>
   <div class="card">
-    <h1 class="card__title">{{ info.title }}</h1>
-    <h5 class="card__subtitle">{{ info.subtitle }}</h5>
+    <h1 class="card__title">
+      {{ info.title }}
+    </h1>
+    <h5 class="card__subtitle">
+      {{ info.subtitle }}
+    </h5>
     <div class="card__tags">
       <span v-for="tag in info.tags" :key="tag" class="card__tags__text">
         {{ tag }}
@@ -46,18 +50,18 @@ export default {
   border: #f1f1f1 solid 1px
   box-shadow: 0px 5px 13px 1px rgba(0, 0, 0, 0.08)
   &__title
-    @include typho-title-post
-    font-size: 1.5rem
+    @include typho-strong-2
+    @include font-size-large
     color: pallete("primary")
   &__subtitle
-    @include typho-subtitle
-    color: #545454
+    @include typho-normal-1
+    color: pallete("grey")
     padding: 1.25rem 0
     font-size: 1.1rem
   &__tags
     &__text
-      @include typho-nav
-      font-size: 0.865rem
+      @include typho-normal-1
+      @include font-size-x-small
       color: pallete("reverse")
       background-color: pallete("secondary")
       padding: 0.25rem 0.5rem
@@ -67,8 +71,8 @@ export default {
       margin-left: 0.5rem
   &__author
     padding: 0.5rem 0 0
-    @include typho-subtitle
-    color: #545454
+    @include typho-normal-1
+    color: pallete("grey")
     display: flex
     justify-content: flex-end
     &__text

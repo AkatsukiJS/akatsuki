@@ -66,7 +66,7 @@ export default {
 
 <style lang="sass" scoped>
 .blog
-  background-color: pallete("reverse")
+  background-color: pallete("primary--reverse")
   min-height: 100vh
   &__post
     width: 740px
@@ -74,18 +74,18 @@ export default {
     padding-top: 4rem
     padding-bottom: 6rem
   &__title
-    @include typho-title-post
+    @include typho-strong-2
+    @include font-size-xx-large
     padding: 1rem 0
-    font-size: 3rem
   &__subtitle
-    @include typho-subtitle
-    color: #5a5a5a
-    font-size: 1.5rem
+    @include typho-normal-1
+    @include font-size-large
+    color: pallete("grey")
     padding: 0.5rem 0 1.5rem
   &__author
-    @include typho-subtitle
-    color: #5a5a5a
-    font-size: 1rem
+    @include typho-normal-1
+    @include font-size-small
+    color: pallete("grey")
     & a
       color: pallete("secondary")
   &__cover
@@ -96,9 +96,8 @@ export default {
       height: 200px
   &__content
     & article
-      @include typho-subtitle
-      font-size: 1.25rem
-      line-height: 1.875rem
+      @include typho-normal-1
+      @include font-size-medium
     & ::v-deep p
       padding: 1rem 0
     & ::v-deep h2, h3, h4, h5, h6
