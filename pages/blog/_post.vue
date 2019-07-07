@@ -40,6 +40,22 @@ const contents = {
 }
 
 export default {
+  head() {
+    return {
+      link: [
+        {
+          rel: 'stylesheet',
+          href:
+            'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css'
+        },
+        {
+          rel: 'stylesheet',
+          href:
+            'https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css'
+        }
+      ]
+    }
+  },
   components: {
     contents,
     HeaderDark,
@@ -65,8 +81,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css)
 .blog
   background-color: pallete("primary--reverse")
   min-height: 100vh
