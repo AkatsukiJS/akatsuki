@@ -8,18 +8,17 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Akatsuki JS',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'O site do grupo Akatsuki JS'
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href:
@@ -27,6 +26,11 @@ export default {
           'Extra+Condensed&display=swap'
       }
     ]
+  },
+  manifest: {
+    name: 'Akatsuki JS',
+    lang: 'pt-br',
+    background_color: '#000000'
   },
   /*
    ** Customize the progress-bar color
@@ -46,7 +50,22 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/style-resources'],
+  modules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources',
+    [
+      '@nuxtjs/pwa',
+      {
+        meta: {
+          name: 'Akatsuki JS',
+          lang: 'pt-br',
+          author: 'akatsukijs',
+          description: 'O site do grupo Akatsuki JS',
+          theme_color: '#000000'
+        }
+      }
+    ]
+  ],
   /*
    ** Build configuration
    */
