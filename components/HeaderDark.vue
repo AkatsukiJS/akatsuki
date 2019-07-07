@@ -5,19 +5,23 @@
         <logo v-if="hasLogo" class="header__logo" />
       </nuxt-link>
       <ul class="header__links">
-        <a target="_blank" href="https://github.com/akatsukijs/akatsuki">
-          <img
-            alt="github"
-            class="icon-github"
-            src="~assets/imgs/GitHub-Mark-Light-64px.png"
-          />
-        </a>
-        <nuxt-link
-          :class="{ header__link: true, 'header__link--red': isBlog }"
-          to="/blog"
-        >
-          <span>Blog</span>
-        </nuxt-link>
+        <li>
+          <a target="_blank" href="https://github.com/akatsukijs/akatsuki">
+            <img
+              alt="github"
+              class="icon-github"
+              src="~assets/imgs/GitHub-Mark-Light-64px.png"
+            />
+          </a>
+        </li>
+        <li>
+          <nuxt-link
+            :class="{ header__link: true, 'header__link--red': isBlog }"
+            to="/blog"
+          >
+            <span>Blog</span>
+          </nuxt-link>
+        </li>
       </ul>
     </nav>
   </div>
@@ -67,7 +71,7 @@ export default {
     display: inline-flex
     align-items: center
     & > *
-      padding: 0 1rem
+      padding: 0 0.5rem
   &__link
     @include typho-strong-2
     @include font-size-large
