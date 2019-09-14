@@ -16,7 +16,7 @@
           Em breve, projetos interessantes!
         </p>
       </section>
-      <footer-x :is-dark="true" />
+      <footer-x />
     </div>
   </div>
 </template>

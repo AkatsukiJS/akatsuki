@@ -21,7 +21,7 @@
         <contents :compiled="compiled" />
       </div>
     </div>
-    <footer-x :is-dark="false" />
+    <footer-x :red-line="true" />
   </div>
 </template>
 
@@ -88,14 +88,11 @@ export default {
     @include width-x
     @include padding-x
     margin: auto
-    padding-top: 4rem
-    padding-bottom: 6rem
   &__title
     @include typho-strong-2
     @include font-size-xx-large
-    padding: 1rem 0
+    padding: 3rem 0 1rem
     @media #{$breakpoint-2}
-      padding: 3rem 0 1rem
       @include font-size-x-large
   &__subtitle
     @include typho-normal-1
@@ -117,6 +114,7 @@ export default {
       width: 100%
       height: 200px
   &__content
+    padding-bottom: 4rem
     & article
       @include typho-normal-1
       @include font-size-medium

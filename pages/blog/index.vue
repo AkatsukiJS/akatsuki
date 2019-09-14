@@ -1,17 +1,19 @@
 <template>
   <div class="blog">
     <header-dark :has-logo="true" :is-blog="true" />
-    <div class="blog__content">
+    <div class="blog__header">
       <h1 class="blog__title">
         Posts
       </h1>
+    </div>
+    <div class="blog__content">
       <div class="blog__cards">
         <nuxt-link v-for="(post, key) in posts" :key="key" :to="'/blog/' + key">
           <post-card class="card" :post="post" />
         </nuxt-link>
       </div>
     </div>
-    <footer-x :is-dark="false" />
+    <footer-x :red-line="true" />
   </div>
 </template>
 
@@ -40,26 +42,45 @@ export default {
 
 <style lang="sass" scoped>
 .blog
-  background-color: pallete("reverse")
+  background-color: pallete("primary--reverse")
   min-height: 100vh
   &__content
     @include width-x
     @include padding-x
     margin: auto
     padding-bottom: 6rem
-
+  &__header
+    @include padding-x
+    background-color: pallete("primary")
   &__title
+    @include width-x
     @include typho-strong-2
     @include font-size-x-large
-    padding: 3rem 0
+    animation: appear ease 0.5s
+    margin: auto
+    color: pallete("primary--reverse")
+    padding: 1.5rem 0.5rem
     @media #{$breakpoint-2}
       @include font-size-large
-      padding: 2rem 0
+      padding: 1.25rem 0.5rem
   &__cards
-    padding-bottom: 3rem
+    padding: 3.75rem 0 0rem
     & a
       text-decoration: none
       display: block
     & > *
       margin-bottom: 3rem
+    @media #{$breakpoint-2}
+      padding: 3rem 0 1rem
+
+@keyframes appear
+  0%
+    opacity: 0
+    transform: translateY(-20px)
+  50%
+    opacity: 0.25
+    transform: translateY(-5px)
+  100%
+    opacity: 1
+    transform: translateY(0px)
 </style>
