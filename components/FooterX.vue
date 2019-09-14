@@ -1,8 +1,8 @@
 <template>
-  <footer :class="{ footer: true, 'footer--dark': isDark }">
+  <footer :class="{ footer: true, footer__redline: redLine }">
     <div class="footer__wrapper">
       <div>
-        <span :class="{ footer__text: true, 'footer__text--dark': isDark }">
+        <span class="footer__text">
           Todo o código está disponível no
         </span>
         <a
@@ -14,7 +14,11 @@
         </a>
       </div>
       <nuxt-link class="footer__logo-link" to="/">
-        <img class="footer__logo" :src="akatsukiNameLogo" alt="akatsuki logo" />
+        <img
+          class="footer__logo"
+          src="~/assets/imgs/akatsuki-js-name.svg"
+          alt="akatsuki logo"
+        />
         <img
           class="footer__logo"
           src="~assets/imgs/akatsuki-js-cloud.svg"
@@ -28,16 +32,9 @@
 <script>
 export default {
   props: {
-    isDark: {
+    redLine: {
       type: Boolean,
       default: false
-    }
-  },
-  computed: {
-    akatsukiNameLogo() {
-      const dark = require('@/assets/imgs/akatsuki-js-name-dark.svg')
-      const light = require('@/assets/imgs/akatsuki-js-name.svg')
-      return this.isDark ? light : dark
     }
   }
 }
@@ -52,9 +49,7 @@ export default {
   display: flex
   justify-content: center
   align-items: center
-  background-color: pallete('grey--light')
-  &--dark
-    background-color: pallete('primary')
+  background-color: pallete("primary")
   &__wrapper
     width: $size-desktop
     display: flex
@@ -62,6 +57,8 @@ export default {
     align-items: center
     @media #{$breakpoint-2}
       flex-direction: column
+  &__redline
+    border-top: 4px solid pallete("secondary")
   &__logo-link
     text-decoration: none
     display: inline-flex
@@ -74,7 +71,5 @@ export default {
   &__link
     color: pallete("secondary")
   &__text
-    color: pallete("primary")
-    &--dark
-      color: pallete("primary--reverse")
+    color: pallete("primary--reverse")
 </style>
