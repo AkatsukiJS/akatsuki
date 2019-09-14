@@ -43,12 +43,17 @@ export default {
 <style lang="sass" scoped>
 .card
   width: 100%
-  background-color: pallete("reverse")
-  border-radius: 8px
+  background-color: pallete("primary--reverse")
   padding: 2rem 2.5rem
   box-sizing: border-box
   border: #f1f1f1 solid 1px
+  border-left: pallete("primary") solid 3px
   box-shadow: 0px 5px 13px 1px rgba(0, 0, 0, 0.08)
+  transition: transform ease 0.25s
+  animation: appear ease 0.5s
+  &:hover
+    box-shadow: 0px 5px 16px 4px rgba(0.25, 0.25, 0.25, 0.06)
+    transform: scale(1.03)
   @media #{$breakpoint-2}
     padding: 1.5rem 1.25rem
   &__title
@@ -84,4 +89,15 @@ export default {
     justify-content: flex-end
     &__text
       color: pallete("primary")
+
+@keyframes appear
+  0%
+    opacity: 0
+    transform: translateY(-20px)
+  50%
+    opacity: 0.25
+    transform: translateY(-5px)
+  100%
+    opacity: 1
+    transform: translateY(0px)
 </style>
