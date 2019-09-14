@@ -54,7 +54,7 @@ export default {
   background-color: pallete("primary")
   width: 100%
   &--blog
-    border-bottom: 8px solid pallete("secondary")
+    border-bottom: 4px solid pallete("secondary")
   @media #{$breakpoint-2}
     padding: 0 1rem
 
@@ -64,14 +64,17 @@ export default {
   display: flex
   justify-content: space-between
   &__logo
-    width: 108px
+    width: 105px
     @media #{$breakpoint-2}
       width: 72px
   &__links
     display: inline-flex
     align-items: center
+    padding: 1.25rem 0
     & > *
       padding: 0 0.5rem
+    @media #{$breakpoint-2}
+      padding: 0.5rem 0
   &__link
     @include typho-strong-2
     @include font-size-large
