@@ -1,0 +1,82 @@
+// COLORS
+
+// no maps multiline :(
+// https://github.com/sass/sass/issues/216
+$secondary: ("secondary": #ff0037, "secondary--dark": #e10534)
+$primary: ("primary": black, "primary--reverse": white)
+$grey: ("grey": #5a5a5a, "grey--light": #E5E5E5)
+$colors: map-merge(map-merge($primary, $secondary), $grey)
+
+@function pallete($key)
+  @return map-get($colors, $key)
+
+// FONTS
+
+// font-families
+$fira-sans: 'Fira Sans', sans-serif
+$fira-condesed: 'Fira Sans Extra Condensed', sans-serif
+
+// font map
+$fonts: ("primary": $fira-condesed, "secondary": $fira-sans)
+
+@function typho($key)
+  @return map-get($fonts, $key)
+
+// fonts mixins
+@mixin typho-strong-1
+  font-family: typho("primary")
+  font-weight: bold
+
+@mixin typho-strong-2
+  font-family: typho("secondary")
+  font-weight: bold
+
+@mixin typho-normal-1
+  font-family: typho("primary")
+  font-weight: normal
+
+@mixin typho-normal-2
+  font-family: typho("secondary")
+  font-weight: normal
+
+@mixin font-size-xx-large
+  font-size: 3rem //48
+  line-height: 4.5rem
+
+@mixin font-size-x-large
+  font-size: 2.25rem //36
+  line-height: 3.375rem
+
+@mixin font-size-large
+  font-size: 1.5rem //24
+  line-height: 2.25rem
+
+@mixin font-size-medium
+  font-size: 1.125rem //18
+  line-height: 1.688rem
+
+@mixin font-size-small
+  font-size: 1rem
+  line-height: 1.5rem
+
+@mixin font-size-x-small
+  font-size: 0.875rem 
+  line-height: 1.313rem
+
+$breakpoint-1: "screen and (max-width: 772px)"
+$breakpoint-2: "screen and (max-width: 640px)"
+
+$size-desktop: 740px
+$size-tablet: 560px
+
+@mixin width-x
+  width: $size-desktop
+  @media #{$breakpoint-1}
+    width: $size-tablet
+  @media #{$breakpoint-2}
+    width: 100%
+
+@mixin padding-x
+  padding: 0
+  @media #{$breakpoint-2}
+    padding: 0 1.25rem
